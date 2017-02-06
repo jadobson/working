@@ -1,0 +1,47 @@
+.container {
+  margin: 0 auto;
+  max-width: $site-width;
+  padding: 0 $grid-gutter-width * 1.5;
+}
+
+.row {
+  @include clearfix;
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+}
+
+[class^="column-"] {
+  float: left;
+  min-height: 1px;
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+  width: 100%;
+}
+
+.column {
+  &--right {
+    float: right;
+  }
+}
+
+@for $i from 1 through $grid-column-count {
+  .column-#{$i} {
+    width: 100% / $grid-column-count * $i;
+  }
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: #{$width + 1}px) {
+    @for $i from 1 through $grid-column-count {
+      .column-#{$breakpoint}-#{$i} {
+        width: 100% / $grid-column-count * $i;
+      }
+    }
+  }
+
+  @media (max-width: #{$width}px) {
+    .column--hide-#{$breakpoint} {
+      display: none;
+    }
+  }
+}

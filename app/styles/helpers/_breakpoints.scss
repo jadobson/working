@@ -1,0 +1,47 @@
+@mixin min-width-s {
+  @media (min-width: #{map-get($breakpoints, s) + 1}px) {
+    @content;
+  }
+}
+
+@mixin min-width-m {
+  @media (min-width: #{map-get($breakpoints, m) + 1}px) {
+    @content;
+  }
+}
+
+@mixin min-width-l {
+  @media (min-width: #{map-get($breakpoints, l) + 1}px) {
+    @content;
+  }
+}
+
+@mixin min-width-xl {
+  @media (min-width: #{map-get($breakpoints, xl) + 1}px) {
+    @content;
+  }
+}
+
+@mixin max-width-s {
+  @media (max-width: #{map-get($breakpoints, s)}px) {
+    @content;
+  }
+}
+
+@mixin max-width-m {
+  @media (max-width: #{map-get($breakpoints, m)}px) {
+    @content;
+  }
+}
+
+@mixin max-width-l {
+  @media (max-width: #{map-get($breakpoints, l)}px) {
+    @content;
+  }
+}
+
+@mixin max-width-xl {
+  @media (max-width: #{map-get($breakpoints, xl)}px) {
+    @content;
+  }
+}
